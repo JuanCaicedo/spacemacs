@@ -1,16 +1,15 @@
 #+TITLE: Vagrant layer
-#+HTML_HEAD_EXTRA: <link rel="stylesheet" type="text/css" href="../../../css/readtheorg.css" />
 
 [[file:img/vagrant.png]]
 
-* Table of Contents                                         :TOC_4_org:noexport:
- - [[Description][Description]]
-   - [[Features:][Features:]]
- - [[Install][Install]]
-   - [[Layer][Layer]]
-   - [[Vagrant][Vagrant]]
-   - [[Testing][Testing]]
- - [[Keybindings][Keybindings]]
+* Table of Contents                                         :TOC_4_gh:noexport:
+ - [[#description][Description]]
+   - [[#features][Features:]]
+ - [[#install][Install]]
+   - [[#layer][Layer]]
+   - [[#vagrant][Vagrant]]
+   - [[#testing][Testing]]
+ - [[#keybindings][Keybindings]]
 
 * Description
 
@@ -48,6 +47,7 @@ in this directory.
 | ~SPC V H~   | halt (shut down) a box                                                                         |
 | ~SPC V p~   | (re)provision a box that is already up                                                         |
 | ~SPC V r~   | resume a suspended box (you can also use =SPC V V= for this)                                   |
+| ~SPC V R~   | reload a box                                                                                   |
 | ~SPC V s~   | view the status of running boxes in the current project                                        |
 | ~SPC V S~   | suspend a box                                                                                  |
 | ~SPC V t~   | start a =vagrant-tramp-term= session - after start, edit files at =/vagrant:box_name:filename= |

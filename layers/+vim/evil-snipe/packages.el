@@ -2,11 +2,11 @@
       '(
         evil-snipe
         magit
+        ranger
         ))
 
 (defun evil-snipe/init-evil-snipe ()
   (use-package evil-snipe
-    :diminish evil-snipe-local-mode
     :init
     (setq evil-snipe-scope 'whole-buffer
           evil-snipe-enable-highlight t
@@ -16,6 +16,7 @@
           evil-snipe-smart-case t)
     :config
     (progn
+      (spacemacs|hide-lighter evil-snipe-local-mode)
       (if evil-snipe-enable-alternate-f-and-t-behaviors
           (progn
             (setq evil-snipe-repeat-scope 'whole-buffer)
@@ -29,3 +30,8 @@
         (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-override-mode))
     (add-hook 'magit-mode-hook 'turn-off-evil-snipe-mode)
     (add-hook 'git-rebase-mode-hook 'turn-off-evil-snipe-mode)))
+
+(defun evil-snipe/post-init-ranger ()
+  (if evil-snipe-enable-alternate-f-and-t-behaviors
+      (add-hook 'ranger-mode-hook 'turn-off-evil-snipe-override-mode)
+    (add-hook 'ranger-mode-hook 'turn-off-evil-snipe-mode)))
